@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Algoseek Landing Page</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .navbar .logo img {
+      height: 40px;
+    }
+    .navbar .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .navbar .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .navbar .btn {
+      background-color: #36a837;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      /* background-color: #f4f4f4; */
+    }
+    .slide {
+      display: flex;
+      animation: slideEffect 9s infinite;
+      width: 300%;
+    }
+    .landing_1, .landing_2, .landing_3 {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: #fff;
+      text-align: center;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
+      margin: 20px 0;
+    }
+    h1 span {
+      color: #36a837;
+    }
+    p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: #666;
+    }
+
+    /* Sliding Animation */
+    @keyframes slideEffect {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(0); }
+      38% { transform: translateX(-100%); }
+      71% { transform: translateX(-100%); }
+      76% { transform: translateX(-200%); }
+      100% { transform: translateX(-200%); }
+    }
+
+    /* Stats Section */
+    .stats {
+      background: url('assets/Stats (1).png') no-repeat center/cover;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .stats h2 {
+      margin-bottom: 40px;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+    .stats .stat-items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .stats .stat-item {
+      flex: 1 1 150px;
+      margin: 10px;
+    }
+    .stats .stat-item h3 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin: 10px 0;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        text-align: center;
+      }
+      .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .hero {
+        height: 90vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar .btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/Logo top 1@2x.png" alt="Algoseek Logo">
+    </div>
+    <div class="nav-links">
+      <a href="#">Data</a>
+      <a href="#">Services</a>
+      <a href="#">Docs</a>
+      <a href="#">Company</a>
+      <a href="#">Contact</a>
+    </div>
+    <a href="#" class="btn">Console →</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="slide">
+      <div class="landing_1">
+        <p>Coding is logical, data is empirical.</p>
+        <h1>Enjoy trading, <br>Leave data to <span>algoseek.</span></h1>
+        <p>Financial data, technology and services.</p>
+      </div>
+      <div class="landing_2">
+        <p>Coding is logical, data is empirical.</p>
+        <h1>Enjoy coding, <br>Leave data to <span>algoseek.</span></h1>
+        <p>Financial data, technology and services.</p>
+      </div>
+      <div class="landing_3">
+        <p>Coding is logical, data is empirical.</p>
+        <h1>Enjoy math, <br>Leave data to <span>algoseek.</span></h1>
+        <p>Financial data, technology and services.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <h2>Since our inception in 2015, we've been fusing advanced technology and financial data <br>
+        know-how to empower our clients worldwide to achieve business success.
+    </h2>
+    <div class="stat-items">
+      <div class="stat-item">
+        <h3>550+</h3>
+        <p>Institutions</p>
+      </div>
+      <div class="stat-item">
+        <h3>200+</h3>
+        <p>Datasets</p>
+      </div>
+      <div class="stat-item">
+        <h3>3,000+</h3>
+        <p>Terabytes</p>
+      </div>
+      <div class="stat-item">
+        <h3>$350+</h3>
+        <p>Billion</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
